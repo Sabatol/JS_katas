@@ -26,7 +26,31 @@ if (bookcount > 0) {
   console.log("Oui, ils ont tous été loués au moins une fois.");
 }
 
+console.log("Quel est livre le plus emprunté ?");
+books.sort(function (a , b) {
+  return b.rented - a.rented
+});
+console.log(books[0]);
 
+console.log("Quel est livre le moins emprunté ?");
+books.sort(function (a , b) {
+  return a.rented - b.rented
+});
+console.log(books[0]);
+
+console.log("Quel est le livre avec l'ID 873495 ?");
+books.find(book => {
+  if (book.id == 873495) {
+    console.log(book)
+  }
+});
+
+console.log("Supprime l'élément d'id 133712 de la liste !");
+for( var i = 0; i < books.length; i++){ 
+  if ( books[i].id === 133712) { 
+    books.splice(i, 1);
+}};
+console.log(books);
 
 console.log("Trie les livres par ordre alphabétique (sans celui avec l'ID 133712 car il est supprimé).");
 books.sort(function (a , b) {
