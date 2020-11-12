@@ -25,7 +25,7 @@ var entrepreneurs = [
 
 console.log("Voici la liste des entrepreneurs qui sont nés dans les années 70");
 entrepreneurs.forEach((entrepreneur) => {
-  if (entrepreneur.year < 1980) {
+  if (entrepreneur.year > 1969 && entrepreneur.year < 1980) {
     console.log(`${entrepreneur.first} ${entrepreneur.last} ${entrepreneur.year}`);
   }
 });
@@ -34,11 +34,16 @@ entrepreneurs.forEach((entrepreneur) => {
 console.log("Voici un array avec la liste des entrepreneurs(Nom/prénom");
 newarray = []
 entrepreneurs.forEach((entrepreneur) => {
-  // Version non optimisée
-  // let entrepreneur_without_age = {first:`${entrepreneur.first}`, last:`${entrepreneur.last}`}
-  // newarray.push(entrepreneur_without_age)
+  // Version optimisée
   delete entrepreneur.year
   newarray.push(entrepreneur)
+
+  // Version non optimisée n°1
+  // let entrepreneur_without_age = {first:`${entrepreneur.first}`, last:`${entrepreneur.last}`}
+  // newarray.push(entrepreneur_without_age)
+
+  // Version non optimisée n°2
+  // newarray.push(`${entrepreneur.first} ${entrepreneur.last}`)
 });
 console.log(newarray);
 

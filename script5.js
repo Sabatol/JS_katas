@@ -48,7 +48,7 @@ books.find(book => {
 console.log("Supprime l'élément d'id 133712 de la liste !");
 for( var i = 0; i < books.length; i++){ 
   if ( books[i].id === 133712) { 
-    books.splice(i, 1);
+    books.splice(i, 1); // i = début, 1 = nb d'élément à supprimer
 }};
 console.log(books);
 
